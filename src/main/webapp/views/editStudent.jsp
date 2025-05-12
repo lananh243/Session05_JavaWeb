@@ -1,10 +1,4 @@
-<%@ page import="com.data.session05_java.ra.model.Student" %><%--
-  Created by IntelliJ IDEA.
-  User: Lan Anh
-  Date: 5/12/2025
-  Time: 11:40 AM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.data.session05_java.ra.model.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

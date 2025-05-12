@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Lan Anh
-  Date: 5/12/2025
-  Time: 9:28 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -35,13 +28,32 @@
                     <input type="hidden" name="id" value="${item.id}"/>
                     <input type="submit" value="Sửa"/>
                 </form>
+
+                <form action="DeleteStudentController" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa sinh viên này không?');">
+                    <input type="hidden" name="id" value="${item.id}"/>
+                    <input type="submit" value="Xóa"/>
+                </form>
             </td>
         </tr>
         </tbody>
     </c:forEach>
-    <c:if test="${empty students}">
-        <p>Không có sinh viên nào!</p>
-    </c:if>
 </table>
+
+<c:if test="${empty students}">
+    <p>Không có sinh viên nào!</p>
+</c:if>
+<br><br>
+<!-- PHÂN TRANG -->
+<div>
+    <c:if test="${currentPage > 1}">
+        <a href="bt4?page=${currentPage - 1}">Trước</a>
+    </c:if>
+
+    <span>Trang ${currentPage} / ${totalPages}</span>
+
+    <c:if test="${currentPage < totalPages}">
+        <a href="bt4?page=${currentPage + 1}">Tiếp</a>
+    </c:if>
+</div>
 </body>
 </html>
